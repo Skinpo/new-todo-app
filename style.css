@@ -99,23 +99,15 @@ body {
     color: var(--Light-Grayish-Blue);
 }
 
-nav {
-    display: flex;
-    width: 100%;
-}
-
 .status-bar {
-    /* height: 400px; */
-    background-color: aqua;
+    background-color: white;
     display: block;
-    /* flex-direction: column-reverse; */
     margin-top: 30px;
     width: 100%;
     border-radius: 5px;
 }
 
 section {
-    /* height: 390px; */
     margin: 0;
 }
 
@@ -124,13 +116,13 @@ section {
     display: block;
     max-height: 400px;
     overflow: auto;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .todo-list ul li{
-    /* background-color: transparent; */
-    background-color: azure;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
     color: var(--Dark-Grayish-Blue);
     width: 100%;
     height: 65px;
@@ -139,6 +131,23 @@ section {
     list-style: none;
     padding-left: 20px;
     display: flex;
+    border-radius: 5px;
+}
+
+.para {
+    padding-left: 20px;
+    padding-top: 25px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.checked {
+    /* padding-left: 20px;
+    padding-top: 25px;
+    font-size: 1rem;
+    text-align: center; */
+    color: var(--Light-Grayish-Blue);
+    text-decoration-line: line-through;
 }
 
 .todo-list ul li p {
@@ -148,9 +157,34 @@ section {
     text-align: center;
 }
 
-.todo-list ul li input {
+.pass {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 1000;
+    margin-top: 25px;
+    margin-left: 3px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.checkbox {
     width: 20px;
-    border-radius: 50px;
+    height: 20px;
+    position: relative;
+    margin-top: 23px;
+    background-color: var(--light-grey);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background-image: linear-gradient(120deg,#57ddff,#c058f3);
 }
 
 input[type=radio] {
@@ -160,7 +194,7 @@ input[type=radio] {
 #none:checked ~ nav label.none,
 #active:checked ~ nav label.active,
 #completed:checked ~ nav label.completed {
-    color: white;
+    color: blue;
 }
 
 .todo-list {
@@ -181,4 +215,42 @@ input[type=radio] {
 
 #completed:checked ~ section .completed-todo-items {
     display: block;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 55px;
+}
+
+nav p, nav .segment label, nav .btn {
+    font-size: 0.85rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+nav p, nav .segment {
+    margin-top: 17px;
+}
+
+nav .segment label {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+nav p {
+    margin-left: 20px;
+    padding-top: 3px;
+}
+
+nav .segment {
+    flex: 2;
+    padding-left: 70px;
+}
+
+nav .btn {
+    flex: 1;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
