@@ -10,7 +10,7 @@
 <body>
 
   <header>
-    <img src="../images/bg-desktop-light.jpg" class="light-mode" alt="header banner for light-mode">
+    <img src="../images/bg-desktop-light.jpg" class="header-light-mode" alt="header banner for light-mode">
     <!--
       <img src="../images/bg-desktop-dark.jpg" class="dark-mode" alt="header banner for dark-mode">
     -->
@@ -26,14 +26,14 @@
           <div class="app-title">
             <h1>TODO</h1>
             <div class="image">
-              <img src="../images/icon-moon.svg" alt="">
+              <img src="../images/icon-moon.svg" class="icon-light-mode" alt="">
             </div>
           </div>
   
-          <div>
+          <div class="add-todo">
             <form  class="input-field" action="">
               <input type="text" placeholder="Create a new todo...">
-              <button>Add</button>
+              <button class="input-btn">Add</button>
             </form>
           </div>
   
@@ -52,36 +52,7 @@
                     <p class="para">Complete online javascript course</p>
                   </li>
                   <hr>
-                  <li>
-                    <img src="../images/icon-check.svg" class="pass" alt="">
-                    <input type="checkbox" class="checkbox">
-                    <p class="para">Complete online javascript course</p>
-                  </li>
-                  <hr>
-                  <li>
-                    <img src="../images/icon-check.svg" class="pass" alt="">
-                    <input type="checkbox" class="checkbox">
-                    <p class="para">Complete online javascript course</p>
-                  </li>
-                  <hr>
-                  <li>
-                    <img src="../images/icon-check.svg" class="pass" alt="">
-                    <input type="checkbox" class="checkbox">
-                    <p class="para">Complete online javascript course</p>
-                  </li>
-                  <hr>
-                  <li>
-                    <img src="../images/icon-check.svg" class="pass" alt="">
-                    <input type="checkbox" class="checkbox">
-                    <p class="para">Complete online javascript course</p>
-                  </li>
-                  <hr>
-                  <li>
-                    <img src="../images/icon-check.svg" class="pass" alt="">
-                    <input type="checkbox" class="checkbox">
-                    <p class="para">Complete online javascript course</p>
-                  </li>
-                  <hr>
+                  
                 </ul>
   
               </div>
@@ -89,70 +60,35 @@
               <div class="todo-list active-todo-items">
                 <ul>
                   <li>
+                    <img src="../images/icon-check.svg" alt="">
                     <input type="checkbox">
                     <p>Complete online javascript course</p>
                   </li>
-                  <li>
-                    <input type="checkbox">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="checkbox">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="checkbox">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="checkbox">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="checkbox">
-                    <p>Complete online javascript course</p>
-                  </li>
+                  <hr>
+
                 </ul>
   
               </div>
   
               <div class="todo-list completed-todo-items">
-                <ul>
+                 <ul>
                   <li>
+                    <img src="../images/icon-check.svg" alt="">
                     <input type="checkbox">
                     <p>Complete online javascript course</p>
                   </li>
-                  <li>
-                    <input type="radio">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="radio">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="radio">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="radio">
-                    <p>Complete online javascript course</p>
-                  </li>
-                  <li>
-                    <input type="radio">
-                    <p>Complete online javascript course</p>
-                  </li>
+                  <hr>
+                  
                 </ul>
   
               </div>
   
             </section>
             
-            <hr>
             <nav>
-              <p>5 items left</p>
+              <p class="count">5 items left</p>
               <div class="segment">
-                <label for="none" class="none">None</label>
+                <label for="none" class="none">All</label>
                 <label for="active" class="active">Active</label>
                 <label for="completed" class="completed">Completed</label>
               </div>
