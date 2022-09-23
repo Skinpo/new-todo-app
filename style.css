@@ -40,6 +40,12 @@ body {
     transition: all .3s;
 }
 
+.icon-dark-mode {
+    visibility: hidden;
+    position: relative;
+    margin-left: -26px;
+}
+
 .main {
     background-color: var(--light-grey);
 }
@@ -315,6 +321,11 @@ nav .segment label, nav .btn, nav p, .input-field button,
 
 .input-field input, .para {
     color: var(--Dark-Mode-Light-Grayish-Blue);
+}
+
+.checked {
+    color: var(--Dark-Mode-Dark-Grayish-Blue);
+    text-decoration-line: line-through;
 } */
 
 
