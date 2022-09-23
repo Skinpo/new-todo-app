@@ -42,8 +42,8 @@ body {
 
 .icon-dark-mode {
     visibility: hidden;
-    position: relative;
-    margin-left: -26px;
+    position: absolute;
+    right: 3px;
 }
 
 .main {
@@ -148,6 +148,10 @@ section {
     border-radius: 5px;
 }
 
+.todo-list ul:hover {
+    cursor: pointer;
+}
+
 .todo-list ul li{
     background-color: transparent;
     border: none;
@@ -160,6 +164,14 @@ section {
     padding-left: 20px;
     display: flex;
     border-radius: 5px;
+}
+
+.cancel {
+    width: 18px;
+    height: 18px;
+    position: fixed;
+    margin-left: 479px;
+    margin-top: 25px;
 }
 
 .checked {
@@ -192,7 +204,7 @@ section {
     visibility: hidden;
 }
 
-.checkbox {
+.checkbox, .checking, .checks {
     width: 20px;
     height: 20px;
     position: relative;
@@ -207,7 +219,16 @@ section {
     cursor: pointer;
 }
 
+.checkbox:hover {
+    border-color: #516ed0;
+    cursor: pointer;
+}
+
 .checkbox:checked {
+    background-image: linear-gradient(120deg,#57ddff,#c058f3);
+}
+
+.checking {
     background-image: linear-gradient(120deg,#57ddff,#c058f3);
 }
 
