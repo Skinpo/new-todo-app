@@ -41,22 +41,18 @@ inputBtn.addEventListener("click", () => {
         newUl.appendChild(hr);
         allItems.appendChild(newUl);
         inputField.value = "";
+        
 
 
     const anotherUl = document.createElement("ul");
     const anotherLi = document.createElement("li");
     const anotherHr = document.createElement("hr");
-    const todo = inputField.value;
-    anotherLi.innerHTML = `
-    <img src="../images/icon-check.svg" class="pass" alt="">
-    <input type="checkbox" class="checkbox">
-    <p class="para">${todo}</p>
-    `
+    anotherLi.innerHTML = newLi.innerHTML;
 
     anotherUl.appendChild(anotherLi);
     anotherUl.appendChild(anotherHr);
     acvtiveItems.appendChild(anotherUl);
-    inputField.value = "";
+    // todo = "";
 
     // const checkBox = document.querySelector(".checkbox");
 
