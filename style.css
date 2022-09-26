@@ -17,7 +17,7 @@
     --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
     /* Dark theme */
-    --Dark-Mode-Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Dark-Mode-Very-Dark-Blue: #161722;
     --Dark-Mode-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
     --Dark-Mode-Light-Grayish-Blue: hsl(234, 39%, 85%);
     --Dark-Mode-Light-Grayish-Blue : hsl(236, 33%, 92%);
@@ -174,16 +174,16 @@ section {
     margin-top: 25px;
 }
 
-.checked {
-    color: var(--Light-Grayish-Blue);
-    text-decoration-line: line-through;
-}
-
 .para {
     padding-left: 20px;
     padding-top: 25px;
     font-size: 1rem;
     text-align: center;
+}
+
+.checked {
+    color: var(--Light-Grayish-Blue);
+    text-decoration-line: line-through;
 }
 
 .todo-list ul li p {
@@ -201,7 +201,7 @@ section {
     margin-top: 25px;
     margin-left: 3px;
     cursor: pointer;
-    visibility: hidden;
+    visibility: visible;
 }
 
 .checkbox, .checking, .checks {
