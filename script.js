@@ -28,7 +28,13 @@ iconDark.addEventListener("click", () => {
 
 inputBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const newUl = document.createElement("ul")
+
+    let d = new Date();
+    let id = document.createElement("id");
+    id = d.getMilliseconds();
+    console.log(id);
+
+    const lists = document.querySelector(".lists");
     const newLi = document.createElement("li");
     const hr = document.createElement("hr")
     newLi.innerHTML = `
@@ -37,37 +43,38 @@ inputBtn.addEventListener("click", (e) => {
     <p class="para par">${inputField.value}</p>
     <img src="../images/icon-cross.svg" class="cancel" >
 `
-        newUl.appendChild(newLi);
-        newUl.appendChild(hr);
-        allItems.appendChild(newUl);
+        lists.appendChild(newLi);
+        lists.appendChild(hr);
+        allItems.appendChild(lists);
         inputField.value = "";
         
 
 
-    const anotherUl = document.createElement("ul");
+    const activeLists = document.querySelector(".active-lists");
     const anotherLi = document.createElement("li");
     const anotherHr = document.createElement("hr");
     anotherLi.innerHTML = newLi.innerHTML;
 
-    anotherUl.appendChild(anotherLi);
-    anotherUl.appendChild(anotherHr);
-    acvtiveItems.appendChild(anotherUl);
+    activeLists.appendChild(anotherLi);
+    activeLists.appendChild(anotherHr);
+    acvtiveItems.appendChild(activeLists);
 
-
-    const checkBox = document.querySelectorAll(".checkbox");
-    const para = document.querySelector(".para")
-
-
-     for (let i = 0; i < checkBox.length; i++) {
-        const tick = checkBox[i];
-        tick.addEventListener("click", () => {
-            console.log("say yes");
-            // if (para.classList.contains("par")) {
-            //     para.classList.replace("par", "checked");
-            // }
+    const checkBox = document.querySelector(".checkbox")
+    for (let i = 0; i < checkBox.length; i++) {
+        checkBox[i].addEventListener("click", () => {
+        let c = new Date();
+        let id = document.createElement("id");
+        id = c.getMilliseconds();
+        console.log(id);
+        const para = document.querySelector(".para")
+        if (para.classList.contains("par")) {
+            para.classList.replace("par", "checked");
+            }
+        
         })
         
     }
+
 
 });
 
