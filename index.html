@@ -6,6 +6,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Todo app</title>
+  
+
 </head>
 <body>
 
@@ -32,13 +34,13 @@
           </div>
   
           <div class="add-todo">
-            <form  class="input-field">
+            <form  class="input-field dark">
               <input type="text" placeholder="Create a new todo..." class="inpute">
               <button class="input-btn">Add</button>
             </form>
           </div>
   
-          <div class="status-bar">
+          <div class="status-bar dark">
   
             <input type="radio" id="none" name="tab" checked>
             <input type="radio" id="active" name="tab">
@@ -46,19 +48,37 @@
   
             <section>
               <div class="todo-list none">
-                <ul class="lists">
+                <ul class="lists dark">
+                  
+                  <!--
+                    <li>
+                    <div class="cbox">
+                      
+                        <img src="../images/icon-check.svg" class="pass" alt="">
+                      
+                      <input type="checkbox" class="checkbox dark">
+                    </div>
+                    <div class="par">
+                      <p class="para">Jogg round my house tw</p>
+                    </div>
+                    <div class="img">
+                      <img src="../images/icon-cross.svg" class="cancel" >
+                    </div>
+                  </li>
+                  <hr>
+                  -->
 
                 </ul>
               </div>
   
               <div class="todo-list active-todo-items">
-                <ul class="active-lists">
+                <ul class="active-lists dark">
 
                 </ul>
               </div>
   
               <div class="todo-list completed-todo-items">
-                <ul class="complete-lists">
+                <ul class="complete-lists dark">
 
                 </ul>
               </div>
@@ -66,13 +86,17 @@
             </section>
             
             <nav>
-              <p class="count">5 items left</p>
+              <div class="counting">
+                <p class="count">5 items left</p>
+              </div>
               <div class="segment">
                 <label for="none" class="none">All</label>
                 <label for="active" class="active">Active</label>
                 <label for="completed" class="completed">Completed</label>
               </div>
-              <button class="btn">Clear Completed</button>
+              <div class="button">
+                <button class="btn">Clear Completed</button>
+              </div>
             </nav> 
   
           </div>

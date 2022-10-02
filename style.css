@@ -14,11 +14,11 @@
     --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
     --Light-Grayish-Blue: hsl(233, 11%, 84%);
     --Dark-Grayish-Blue: hsl(236, 9%, 61%);
-    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    --Very-Dark-Grayish-Blue: #484b6a;
 
     /* Dark theme */
     --Dark-Mode-Very-Dark-Blue: #161722;
-    --Dark-Mode-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Dark-Mode-Very-Dark-Desaturated-Blue: #25273c;
     --Dark-Mode-Light-Grayish-Blue: hsl(234, 39%, 85%);
     --Dark-Mode-Light-Grayish-Blue : hsl(236, 33%, 92%);
     --Dark-Mode-Dark-Grayish-Blue: hsl(234, 11%, 52%);
@@ -27,7 +27,6 @@
 }
 
 body {
-    
     height: 100vh;
     /* background-color: blueviolet; */
 }
@@ -52,7 +51,7 @@ body {
 
 .container {
     max-width: 540px;
-    /* background-color: var(--light-grey); */
+    /* background-color: aqua; */
     margin: auto;
     position: relative;
     margin-top: -220px;
@@ -60,7 +59,7 @@ body {
 
 .content {
     width: 100%;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .app-title {
@@ -135,9 +134,9 @@ body {
     filter: drop-shadow(0 0 0.4rem black);
 }
 
-section {
+/* section {
     margin: 0;
-}
+} */
 
 .todo-list ul {
     width: 100%;
@@ -166,50 +165,36 @@ section {
     border-radius: 5px;
 }
 
+.cbox, .img {
+    flex: 1;
+    max-width: 50px;
+}
+
+.par {
+    flex: 2;
+}
+
 .cancel {
     width: 18px;
     height: 18px;
-    position: fixed;
-    margin-left: 479px;
+    /* position: inherit; */
     margin-top: 25px;
 }
 
 .para {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     padding-top: 25px;
     font-size: 1rem;
-    text-align: center;
+    /* text-align: center; */
 }
 
-.checked {
-    color: var(--Light-Grayish-Blue);
-    text-decoration-line: line-through;
-}
-
-.todo-list ul li p {
-    padding-left: 20px;
-    padding-top: 25px;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.pass {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    z-index: 1000;
-    margin-top: 25px;
-    margin-left: 3px;
-    cursor: pointer;
-    visibility: visible;
-}
-
-.checkbox, .checking, .checks {
+/* , .checking, .checks */
+.checkbox {
     width: 20px;
     height: 20px;
     position: relative;
     margin-top: 23px;
-    background-color: var(--light-grey);
+    /* background-color: var(--light-grey); */
     border-radius: 50%;
     vertical-align: middle;
     border: 1px solid #ddd;
@@ -221,16 +206,34 @@ section {
 
 .checkbox:hover {
     border-color: #516ed0;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .checkbox:checked {
     background-image: linear-gradient(120deg,#57ddff,#c058f3);
 }
 
-.checking {
+/* .todo-list ul li p {
+    padding-left: 20px;
+    padding-top: 25px;
+    font-size: 1rem;
+    text-align: center;
+} */
+
+/* .pass {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 1000;
+    margin-top: 25px;
+    margin-left: 3px;
+    cursor: pointer;
+    visibility: visible;
+} */
+
+/* .checking {
     background-image: linear-gradient(120deg,#57ddff,#c058f3);
-}
+} */
 
 input[type=radio] {
     display: none;
@@ -242,16 +245,10 @@ input[type=radio] {
     color: blue;
 }
 
-nav label.none:hover {
-    color: blue;
-}
-
-nav label.active:hover {
-    color: blue;
-}
-
+nav label.none:hover, nav label.active:hover,
 nav label.completed:hover {
     color: blue;
+    cursor: pointer;
 }
 
 .todo-list {
@@ -262,9 +259,9 @@ nav label.completed:hover {
     display: block;
 }
 
-#all:checked ~ section .all-to-do-items {
+/* #all:checked ~ section .all-to-do-items {
     display: block;
-}
+} */
 
 #active:checked ~ section .active-todo-items {
     display: block;
@@ -285,7 +282,7 @@ nav p, nav .segment label, nav .btn {
     color: var(--Dark-Grayish-Blue);
 }
 
-nav p, nav .segment {
+nav .counting, nav .segment, nav .button {
     margin-top: 17px;
 }
 
@@ -294,27 +291,36 @@ nav .segment label {
     margin-right: 15px;
 }
 
-nav p {
+nav .counting {
     margin-left: 20px;
     padding-top: 3px;
 }
 
 nav .segment {
     flex: 2;
-    padding-left: 70px;
+    margin-left: 50px;
 }
 
-nav .btn {
+nav .button {
     flex: 1;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 
-nav .btn:hover {
-    color: blue;
+nav .btn {
+    /* flex: 1;
+    margin-right: 10px; */
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
+
+nav .btn:hover, nav label.active:hover, nav label.completed:hover {
+    color: var(--Very-Dark-Grayish-Blue)
+}
+
 
 /* dark-mode */
 
