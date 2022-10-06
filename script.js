@@ -2,7 +2,7 @@ const icon = document.querySelector(".icon-light-mode");
 const iconDark = document.querySelector(".icon-dark-mode");
 const header = document.querySelector(".header-light-mode");
 const allItems = document.querySelector(".none");
-const acvtiveItems = document.querySelector(".active-todo-items");
+// const acvtiveItems = document.querySelector(".active-todo-items");
 const completedItems = document.querySelector(".completed-todo-items");
 const inputField = document.querySelector(".inpute");
 const para = document.querySelectorAll(".para");
@@ -116,13 +116,15 @@ inputBtn.addEventListener("click", (e) => {
 
     activeLists.appendChild(anotherLi);
     // activeLists.appendChild(anotherHr);
-    acvtiveItems.appendChild(activeLists);
+    // acvtiveItems.appendChild(activeLists);
 
     getTodo();
 
-    // deleteTodo();
-
     checkedCompleted ();
+
+    getActiveTodo();
+
+    // checkedActiveCompleted ();
 
 });
 
@@ -134,18 +136,18 @@ function getTodo() {
     // let checkedPass = lists.querySelectorAll(".pass");
     let deleteBtn = lists.querySelectorAll(".cancel");
     let tagLi = lists.getElementsByTagName("li");
-    let checkBox = lists.querySelectorAll(".checkbox");
+    // let checkBox = lists.querySelectorAll(".checkbox");
 
     for(let i = 0; i < tagLi.length; i++) {
 
         deleteTodo(tagLi[i], i);
-        
-        // checkedCompleted(checkBox[i], i);
     }   
+    
 }
 
 function deleteTodo(item, idx) {
     const lists = document.querySelector(".lists");
+
     if(!item)  return;
 
     let tagLi = lists.getElementsByTagName("li");
@@ -161,29 +163,68 @@ function deleteTodo(item, idx) {
     } 
 }
 
+function getActiveTodo() {
+    const activeLists = document.querySelector(".active-lists");
+
+    let delet = activeLists.querySelectorAll(".cancel");
+    let anotherActiveLi = activeLists.getElementsByTagName("li"); 
+
+    for(let i = 0; i < anotherActiveLi.length; i++) {
+
+        deleteActiveTodo(anotherActiveLi[i], i);
+    } 
+
+    
+}
+
+
+function deleteActiveTodo(item, idx) {
+    const activeLists = document.querySelector(".active-lists");
+
+    if(!item)  return;
+
+    let anotherActiveLi = activeLists.getElementsByTagName("li");
+    let delet = activeLists.querySelectorAll(".cancel");
+
+    for (let i = 0; i <anotherActiveLi.length; i++) {
+        delet[i].addEventListener("click", () => {
+            if(i === idx) {
+                item.remove();
+            }
+        });
+
+    } 
+}
+
 function checkedCompleted() {
     const lists = document.querySelector(".lists");
     let myList = lists.querySelectorAll(".checkbox");
     let listItems = document.querySelectorAll(".list-item");
-    // let para = lists.querySelectorAll(".para");
-    // console.log(para[i]);
+
+    const activeLists = document.querySelector(".active-lists");
+    let activeListItems = activeLists.querySelectorAll(".list-item")
+
+    for (let i = 0; i < activeListItems.length; i++) {
+    }
 
     for (let i = 0; i < myList.length; i++) {
         myList[i].addEventListener("click", () => {
+            // let activeListItems[i] = listItems[i] 
             // console.log(listItems[i].children[0].firstElementChild);
             if (listItems[i].children[0].firstElementChild.classList.contains("checkbox")) {
-                listItems[i].children[1].firstElementChild.classList.toggle("text")
-                console.log(listItems[i].children[1].firstElementChild.classList)
+                listItems[i].children[1].firstElementChild.classList.replace("para", "text")
+                activeListItems[i].remove();
+                activeLists.activeListItems--;
             }
 
-            // if (icon.classList.contains("icon-dark-mode")) {
-            //     let para = document.querySelectorAll(".para");
-            //     for (let i = 0; i < para.length; i++) {
-            //     const letters = para[i];
-            //     letters.style.color = "#6c6e85";}
-            // } else {
-            //     letters.style.color = "white"; 
-            // }
+            if (icon.classList.contains("icon-dark-mode")) {
+                let para = document.querySelectorAll(".para");
+                for (let i = 0; i < para.length; i++) {
+                const letters = para[i];
+                letters.style.color = "#6c6e85";}
+            } 
+
+
             
         })
         
@@ -196,27 +237,7 @@ function checkedCompleted() {
 /**
  
 
-if (icon.classList.contains("icon-dark-mode")){
-                console.log("something")
-                let para = document.querySelectorAll(".para");
-                for (let i = 0; i < para.length; i++) {
-                const letters = para[i];
-                letters.style.color = "#6c6e85";}
-            }
 
-
-// const activeLists = document.querySelector(".active-lists");
-
-    // let anotherDelete = activeLists.querySelectorAll(".cancel");
-    // let anotherLi = activeLists.getElementsByTagName("li");
-    // let anotherCheckBox = activeLists.querySelectorAll(".checkbox");
-
-    // for(let i = 0; i < anotherLi.length; i++) {
-
-    //     deleteTodo(anotherLi[i], i);
-        
-    //     checkedCompleted(anotherCheckBox[i], i);
-    // }
 
 
 

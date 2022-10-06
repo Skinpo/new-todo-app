@@ -246,6 +246,7 @@ body {
 } */
 
 .text {
+    margin-top: 23px;
     color: var(--Light-Grayish-Blue);
     text-decoration-line: line-through;
 }
