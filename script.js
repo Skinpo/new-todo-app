@@ -89,15 +89,32 @@ inputBtn.addEventListener("click", (e) => {
         <div class="par">
         <p class="para">${inputField.value}</p>
         </div>
-        <div class="img">
-        <img src="../images/icon-cross.svg" class="cancel" >
-        </div>
     `
 
-        // const target = document.querySelector(`${id}`)
-        // console.log(target);
-
+    const newDiv = document.createElement("div");
+    newDiv.setAttribute("class", "cbox");
+    newDiv.innerHTML = `
+    <img src="../images/icon-cross.svg" class="cancel" >
+    `
         lists.appendChild(newLi);
+
+
+        // function mousein(e) {
+        //     newLi.appendChild(newDiv);
+        //     e.preventDefault()
+        // }
+
+        // function mouseout(e) {
+        //     newDiv.style.display = "none";
+        //     e.preventDefault()
+        // }
+
+        // newLi.addEventListener("mouseover", () => {
+        //     if () {
+                
+        //     }
+        // })
+
         allItems.appendChild(lists);
         // allItems.lists++
         inputField.value = "";
@@ -136,7 +153,7 @@ inputBtn.addEventListener("click", (e) => {
 
     checkedCompleted ();
 
-    getActiveTodo();
+    // getActiveTodo();
 
 });
 
@@ -154,6 +171,14 @@ function getTodo() {
 
         deleteTodo(tagLi[i], i);
     }   
+
+    let delet = activeLists.querySelectorAll(".cancel");
+    let anotherActiveLi = activeLists.getElementsByTagName("li"); 
+
+    for(let i = 0; i < anotherActiveLi.length; i++) {
+
+        deleteTodo(anotherActiveLi[i], i);
+    } 
     
 }
 
@@ -173,24 +198,7 @@ function deleteTodo(item, idx) {
         });
 
     } 
-}
 
-function getActiveTodo() {
-    let delet = activeLists.querySelectorAll(".cancel");
-    let anotherActiveLi = activeLists.getElementsByTagName("li"); 
-
-    for(let i = 0; i < anotherActiveLi.length; i++) {
-
-        deleteActiveTodo(anotherActiveLi[i], i);
-    } 
-
-    
-}
-
-
-function deleteActiveTodo(item, idx) {
-
-    if(!item)  return;
 
     let anotherActiveLi = activeLists.getElementsByTagName("li");
     let delet = activeLists.querySelectorAll(".cancel");
@@ -204,6 +212,36 @@ function deleteActiveTodo(item, idx) {
 
     } 
 }
+
+// function getActiveTodo() {
+//     let delet = activeLists.querySelectorAll(".cancel");
+//     let anotherActiveLi = activeLists.getElementsByTagName("li"); 
+
+//     for(let i = 0; i < anotherActiveLi.length; i++) {
+
+//         deleteActiveTodo(anotherActiveLi[i], i);
+//     } 
+
+    
+// }
+
+
+// function deleteActiveTodo(item, idx) {
+
+//     if(!item)  return;
+
+//     let anotherActiveLi = activeLists.getElementsByTagName("li");
+//     let delet = activeLists.querySelectorAll(".cancel");
+
+//     for (let i = 0; i <anotherActiveLi.length; i++) {
+//         delet[i].addEventListener("click", () => {
+//             if(i === idx) {
+//                 item.remove();
+//             }
+//         });
+
+//     } 
+// }
 
 function checkedCompleted() {
     let myList = lists.querySelectorAll(".checkbox");

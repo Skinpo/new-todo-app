@@ -147,9 +147,9 @@ body {
     border-radius: 5px;
 }
 
-.todo-list ul:hover {
+/* .todo-list ol:hover {
     cursor: pointer;
-}
+} */
 
 .list-item {
     background-color: transparent;
@@ -171,6 +171,10 @@ body {
     border-right: 0px;
 }
 
+.list-item:hover {
+    cursor: pointer;
+}
+
 /* .list-item {
     margin-bottom: 10px;
 } */
@@ -189,6 +193,10 @@ body {
     height: 18px;
     /* position: inherit; */
     margin-top: 25px;
+}
+
+.cancel:hover {
+    cursor: pointer;
 }
 
 .para {
