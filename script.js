@@ -217,13 +217,13 @@ function checkedCompleted() {
 
     for (let i = 0; i < myList.length; i++) {
         myList[i].addEventListener("click", (e) => {
-            e.preventDefault();
             
             if (listItems[i].children[0].firstElementChild.classList.contains("checkbox")) {
                 listItems[i].children[1].firstElementChild.classList.replace("para", "text");
-                e.stopImmediatePropagation()
+               
                 console.log(listItems[i])
                 let elem = listItems[i].cloneNode(true);
+                e.stopImmediatePropagation()
                 console.log(elem.children[1].firstElementChild.classList.replace("text", "para"))
                 completeList.appendChild(elem);
                 
