@@ -28,10 +28,7 @@
 
 body {
     height: 100vh;
-    /* background-color: blueviolet; */
 }
-
-/* light-mode */
 
 .header-light-mode, .icon-light-mode,
 .input-field, .status-bar, .todo-list ul,
@@ -51,7 +48,6 @@ body {
 
 .container {
     max-width: 540px;
-    /* background-color: aqua; */
     margin: auto;
     position: relative;
     margin-top: -220px;
@@ -59,7 +55,6 @@ body {
 
 .content {
     width: 100%;
-    /* z-index: 1000; */
 }
 
 .app-title {
@@ -134,11 +129,7 @@ body {
     filter: drop-shadow(0 0 0.4rem black);
 }
 
-/* section {
-    margin: 0;
-} */
-
-.todo-list ul {
+.todo-list ol {
     width: 100%;
     display: block;
     max-height: 400px;
@@ -146,10 +137,6 @@ body {
     background-color: white;
     border-radius: 5px;
 }
-
-/* .todo-list ol:hover {
-    cursor: pointer;
-} */
 
 .list-item {
     background-color: transparent;
@@ -160,9 +147,8 @@ body {
     outline: none;
     color: var(--Very-Dark-Grayish-Blue);
     list-style: none;
-    padding-left: 20px;
+    padding-left: 10px;
     display: flex;
-    /* border-radius: 5px; */
     box-sizing: border-box;
     width: 100%;
     border: solid var(--Very-Dark-Grayish-Blue) 1px;
@@ -174,10 +160,6 @@ body {
 .list-item:hover {
     cursor: pointer;
 }
-
-/* .list-item {
-    margin-bottom: 10px;
-} */
 
 .cbox, .img {
     flex: 1;
@@ -191,7 +173,6 @@ body {
 .cancel {
     width: 18px;
     height: 18px;
-    /* position: inherit; */
     margin-top: 25px;
 }
 
@@ -200,19 +181,15 @@ body {
 }
 
 .para {
-    /* padding-left: 20px; */
     padding-top: 25px;
     font-size: 1rem;
-    /* text-align: center; */
 }
 
-/* , .checking, .checks */
 .checkbox {
     width: 20px;
     height: 20px;
     position: relative;
     margin-top: 23px;
-    /* background-color: var(--light-grey); */
     border-radius: 50%;
     vertical-align: middle;
     border: 1px solid #ddd;
@@ -224,34 +201,11 @@ body {
 
 .checkbox:hover {
     border-color: #516ed0;
-    /* cursor: pointer; */
 }
 
 .checkbox:checked {
     background-image: linear-gradient(120deg,#57ddff,#c058f3);
 }
-
-/* .todo-list ul li p {
-    padding-left: 20px;
-    padding-top: 25px;
-    font-size: 1rem;
-    text-align: center;
-} */
-
-/* .pass {
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    z-index: 1000;
-    margin-top: 25px;
-    margin-left: 3px;
-    cursor: pointer;
-    visibility: visible;
-} */
-
-/* .checking {
-    background-image: linear-gradient(120deg,#57ddff,#c058f3);
-} */
 
 .text {
     margin-top: 23px;
@@ -288,10 +242,6 @@ nav label.completed:hover {
     display: block;
 }
 
-/* #all:checked ~ section .all-to-do-items {
-    display: block;
-} */
-
 #active:checked ~ section .active-todo-items {
     display: block;
 }
@@ -304,20 +254,11 @@ nav {
     display: flex;
     width: 100%;
     height: 55px;
+    justify-content: space-between;
 }
 
-nav p, nav .segment label, nav .btn {
-    font-size: 0.85rem;
-    color: var(--Dark-Grayish-Blue);
-}
-
-nav .counting, nav .segment, nav .button {
+nav .counting, nav .button {
     margin-top: 17px;
-}
-
-nav .segment label {
-    cursor: pointer;
-    margin-right: 15px;
 }
 
 nav .counting {
@@ -325,77 +266,111 @@ nav .counting {
     padding-top: 3px;
 }
 
-nav .segment {
-    flex: 2;
-    margin-left: 50px;
+nav p {
+    font-size: 0.85rem;
+    color: var(--Dark-Grayish-Blue);
 }
 
 nav .button {
-    flex: 1;
-    /* margin-right: 10px; */
     cursor: pointer;
     background-color: transparent;
     border: none;
+    padding-right: 20px;
 }
 
 nav .btn {
-    /* flex: 1;
-    margin-right: 10px; */
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 
-nav .btn:hover, nav label.active:hover, nav label.completed:hover {
-    color: var(--Very-Dark-Grayish-Blue)
+nav .btn:hover {
+    color: blue;
+}
+
+.segment {
+    width: 250px;
+    /* background-color: #57ddff; */
+    position: relative;
+    margin-left: 130px;
+    margin-top: -35px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav .btn, .none, .active, .completed {
+    font-size: 0.85rem;
+    color: var(--Dark-Grayish-Blue);
+    cursor: pointer;
+}
+
+.none:hover, .active:hover, .completed:hover {
+    color: var(--Very-Dark-Grayish-Blue);
+    color: blue;
 }
 
 
-/* dark-mode */
+@media all and (max-width: 375px) {
+    .container {
+        max-width: 330px;
+    }
 
+    .input-field button {
+        width: 45px;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        margin-top: 8px;
+        margin-left: 0;
+        margin-right: 15px;
+    }
 
-/* .input-field, .status-bar, .todo-list ul, .checkbox {
-    background-color: var(--Dark-Mode-Very-Dark-Desaturated-Blue);
+    .segment {
+        width: 330px;
+        background-color: #fff;
+        position: relative;
+        margin-left: 0px;
+        top: 70px;
+        height: 45px;
+        justify-content: space-between;
+        border-radius: 5px;
+    }
+
+    .none, .active, .completed {
+        margin-top: 15px;
+    }
+
+    .todo-list, .none {
+        margin-left: 20px;
+    }
+
+    .completed {
+        margin-right: 20px;
+    }
+
+    .todo-list ol {
+        width: 330px;
+        display: block;
+        max-height: 325px;
+        overflow: auto;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: -15px;
+    }
+
+    .cbox, .img {
+        max-width: 35px;
+    }
+
+    .para {
+        padding-top: 25px;
+        font-size: 0.85rem;
+    }
+
+    ::placeholder {
+        font-size: 0.88rem;
+    }
+
+        
 }
-
-.checkbox, hr {
-    border: 1px solid var(--Dark-Mode-Dark-Grayish-Blue);
-}
-
-.main {
-    background-color: var(--Dark-Mode-Very-Dark-Blue);
-}
-
-.input-field button {
-    background-color: var(--Dark-Mode-Very-Dark-Grayish-Blue);
-}
-
-nav .segment label, nav .btn, nav p, .input-field button,
-.input-field input::placeholder {
-    color: var(--Dark-Mode-Dark-Grayish-Blue);
-}
-
-.input-field input, .para {
-    color: var(--Dark-Mode-Light-Grayish-Blue);
-}
-
-.checked {
-    color: var(--Dark-Mode-Dark-Grayish-Blue);
-    text-decoration-line: line-through;
-} */
-
-
-
-
-
-
-
-/* .input-field-dark-mode, .status-bar-dark-mode,
-.todo-list-dark-mode ul,
-.main-dark-mode {
-    background-color: var(--Dark-Mode-Very-Dark-Blue);
-} */
-
-
-
-
