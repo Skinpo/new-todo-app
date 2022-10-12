@@ -2,7 +2,6 @@ const icon = document.querySelector(".icon-light-mode");
 const iconDark = document.querySelector(".icon-dark-mode");
 const header = document.querySelector(".header-light-mode");
 const allItems = document.querySelector(".none");
-// const acvtiveItems = document.querySelector(".active-todo-items");
 const completedItems = document.querySelector(".completed-todo-items");
 const inputField = document.querySelector(".inpute");
 const para = document.querySelectorAll(".para");
@@ -22,11 +21,7 @@ icon.addEventListener("click", () => {
         }
         
         const main = document.querySelector(".main");
-        main.style.backgroundColor = "#161722"
-
-        // for (let i = 0; i < para.length; i++) {
-        //     para[i].style.color = "white"
-        // }      
+        main.style.backgroundColor = "#161722"    
         
         let para = document.querySelectorAll(".para");
         for (let i = 0; i < para.length; i++) {
@@ -49,10 +44,6 @@ iconDark.addEventListener("click", () => {
         }
         const main = document.querySelector(".main");
         main.style.backgroundColor = "white"
-        
-        // for (let i = 0; i < para.length; i++) {
-        //     para[i].style.color = "#484b6a"
-        // }
 
         let para = document.querySelectorAll(".para");
         for (let i = 0; i < para.length; i++) {
@@ -66,6 +57,8 @@ iconDark.addEventListener("click", () => {
     const completeList = document.querySelector(".complete-lists");
     const activeLists = document.querySelector(".active-lists");
 
+
+
 inputBtn.addEventListener("click", (e) => {
     e.preventDefault();
     if(inputField.value === '') {
@@ -77,7 +70,6 @@ inputBtn.addEventListener("click", (e) => {
     id = d.getMilliseconds();
     console.log(id);
 
-    // const lists = document.querySelector(".lists");
     const newLi = document.createElement("li");
     newLi.setAttribute("class", "list-item");
     newLi.setAttribute("id", `${id}-li`);
@@ -89,34 +81,13 @@ inputBtn.addEventListener("click", (e) => {
         <div class="par">
         <p class="para">${inputField.value}</p>
         </div>
+        <div class="cbox">
+        <img src="../images/icon-cross.svg" class="cancel" >
+        </div>
     `
 
-    const newDiv = document.createElement("div");
-    newDiv.setAttribute("class", "cbox");
-    newDiv.innerHTML = `
-    <img src="../images/icon-cross.svg" class="cancel" >
-    `
         lists.appendChild(newLi);
-
-
-        // function mousein(e) {
-        //     newLi.appendChild(newDiv);
-        //     e.preventDefault()
-        // }
-
-        // function mouseout(e) {
-        //     newDiv.style.display = "none";
-        //     e.preventDefault()
-        // }
-
-        // newLi.addEventListener("mouseover", () => {
-        //     if () {
-                
-        //     }
-        // })
-
         allItems.appendChild(lists);
-        // allItems.lists++
         inputField.value = "";
 
         let para = document.querySelectorAll(".para");
@@ -126,34 +97,18 @@ inputBtn.addEventListener("click", (e) => {
                 letters.style.color = "white";
             }
         }
-    
 
-    // const activeLists = document.querySelector(".active-lists");
     const anotherLi = document.createElement("li");
     anotherLi.setAttribute("class", "list-item");
     anotherLi.innerHTML = newLi.innerHTML;
 
+    anotherLi.children[2].firstElementChild.remove();
+
     activeLists.appendChild(anotherLi);
-
-
-    // const completeList = document.querySelector(".complete-lists");
-
-
-    // const completeLi = document.createElement("li");
-    // completeLi.setAttribute("class", "list-item");
-    // completeLi.innerHTML = newLi.innerHTML;
-    // console.log(completeLi)
-
-
-    // completeList.appendChild(completeLi);
-    // let completed = completeList
-    // completed.innerHTML = ""
 
     getTodo();
 
     checkedCompleted ();
-
-    // getActiveTodo();
 
 });
 
@@ -172,7 +127,6 @@ function getTodo() {
         deleteTodo(tagLi[i], i);
     }   
 
-    let delet = activeLists.querySelectorAll(".cancel");
     let anotherActiveLi = activeLists.getElementsByTagName("li"); 
 
     for(let i = 0; i < anotherActiveLi.length; i++) {
@@ -190,58 +144,21 @@ function deleteTodo(item, idx) {
     let tagLi = lists.getElementsByTagName("li");
     let deleteBtn = lists.querySelectorAll(".cancel");
 
+    let anotherActiveLi = activeLists.getElementsByTagName("li");
+
+    for (let i = 0; i < anotherActiveLi.length; i++)
+
     for (let i = 0; i <tagLi.length; i++) {
         deleteBtn[i].addEventListener("click", () => {
             if(i === idx) {
                 item.remove();
-            }
-        });
-
-    } 
-
-
-    let anotherActiveLi = activeLists.getElementsByTagName("li");
-    let delet = activeLists.querySelectorAll(".cancel");
-
-    for (let i = 0; i <anotherActiveLi.length; i++) {
-        delet[i].addEventListener("click", () => {
-            if(i === idx) {
-                item.remove();
+                activeLists.anotherActiveLi--
             }
         });
 
     } 
 }
 
-// function getActiveTodo() {
-//     let delet = activeLists.querySelectorAll(".cancel");
-//     let anotherActiveLi = activeLists.getElementsByTagName("li"); 
-
-//     for(let i = 0; i < anotherActiveLi.length; i++) {
-
-//         deleteActiveTodo(anotherActiveLi[i], i);
-//     } 
-
-    
-// }
-
-
-// function deleteActiveTodo(item, idx) {
-
-//     if(!item)  return;
-
-//     let anotherActiveLi = activeLists.getElementsByTagName("li");
-//     let delet = activeLists.querySelectorAll(".cancel");
-
-//     for (let i = 0; i <anotherActiveLi.length; i++) {
-//         delet[i].addEventListener("click", () => {
-//             if(i === idx) {
-//                 item.remove();
-//             }
-//         });
-
-//     } 
-// }
 
 function checkedCompleted() {
     let myList = lists.querySelectorAll(".checkbox");
@@ -255,14 +172,14 @@ function checkedCompleted() {
 
     for (let i = 0; i < myList.length; i++) {
         myList[i].addEventListener("click", (e) => {
-            
+
             if (listItems[i].children[0].firstElementChild.classList.contains("checkbox")) {
                 listItems[i].children[1].firstElementChild.classList.replace("para", "text");
                
-                console.log(listItems[i])
                 let elem = listItems[i].cloneNode(true);
                 e.stopImmediatePropagation()
-                console.log(elem.children[1].firstElementChild.classList.replace("text", "para"))
+                elem.children[2].firstElementChild.remove();
+                elem.children[1].firstElementChild.classList.replace("text", "para");
                 completeList.appendChild(elem);
                 
                 activeListItems[i].remove();
@@ -270,17 +187,12 @@ function checkedCompleted() {
                 
                 
             }
-
-            if (icon.classList.contains("icon-dark-mode")) {
-                let para = document.querySelectorAll(".para");
-                for (let i = 0; i < para.length; i++) {
-                const letters = para[i];
-                letters.style.color = "#6c6e85";}
-            } 
-
-
-            
+          
         })
         
     }
 }
+
+const clearCompleted = document.querySelector(".btn");
+
+clearCompleted.addEventListener("click", () => completeList.innerHTML = "")
