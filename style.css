@@ -147,7 +147,7 @@ body {
     outline: none;
     color: var(--Very-Dark-Grayish-Blue);
     list-style: none;
-    padding-left: 10px;
+    padding-left: 20px;
     display: flex;
     box-sizing: border-box;
     width: 100%;
@@ -222,9 +222,9 @@ input[type=radio] {
     display: none;
 }
 
-#none:checked ~ nav label.none,
-#active:checked ~ nav label.active,
-#completed:checked ~ nav label.completed {
+#none:checked ~ .segment label.none,
+#active:checked ~ .segment label.active,
+#completed:checked ~ .segment label.completed {
     color: blue;
 }
 
@@ -262,13 +262,18 @@ nav .counting, nav .button {
 }
 
 nav .counting {
+    display: flex;
     margin-left: 20px;
     padding-top: 3px;
 }
 
-nav p {
+nav p, nav span {
     font-size: 0.85rem;
     color: var(--Dark-Grayish-Blue);
+}
+
+nav p {
+    width: 20px;
 }
 
 nav .button {
@@ -312,16 +317,28 @@ nav .btn, .none, .active, .completed {
 
 
 @media all and (max-width: 375px) {
+
+    header {
+        max-width: 375px;
+    }
+
+    header img {
+        max-width: 375px;
+        height: 245px;
+    }
+
     .container {
         max-width: 330px;
+        margin-top: -250px;
+    }
+
+    .app-title {
+        margin-top: 55px;
     }
 
     .input-field button {
         width: 45px;
         height: 40px;
-        border: none;
-        border-radius: 3px;
-        margin-top: 8px;
         margin-left: 0;
         margin-right: 15px;
     }
@@ -350,12 +367,8 @@ nav .btn, .none, .active, .completed {
     }
 
     .todo-list ol {
-        width: 330px;
-        display: block;
-        max-height: 325px;
-        overflow: auto;
-        background-color: white;
-        border-radius: 5px;
+        width: 325px;
+        max-height: 260px;
         margin-left: -15px;
     }
 
@@ -370,6 +383,18 @@ nav .btn, .none, .active, .completed {
 
     ::placeholder {
         font-size: 0.88rem;
+    }
+
+    .input-field {
+        margin-top: 25px;
+    }
+
+    .add-todo {
+        filter: drop-shadow(0 0 0.1rem black);
+    }
+
+    .status-bar {
+        filter: drop-shadow(0 0 0.1rem black);
     }
 
         
